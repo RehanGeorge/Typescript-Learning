@@ -22,3 +22,7 @@ function rando(num: number) {
     }
     return num;
 }
+
+function boolInvert(bool: boolean): boolean {
+    return !bool;
+}
