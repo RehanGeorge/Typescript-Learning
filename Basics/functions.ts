@@ -26,3 +26,20 @@ function rando(num: number) {
 function boolInvert(bool: boolean): boolean {
     return !bool;
 }
+
+const colors = ["red", "green", "blue"];
+colors.map(color => color.length);
+
+function print(): void {
+    console.log("print");
+}
+
+function makeError(msg: string): never {
+    throw new Error(msg);
+}
+
+function gameLoop(): never {
+    while(true) {
+        console.log("game loop")
+    }
+}
