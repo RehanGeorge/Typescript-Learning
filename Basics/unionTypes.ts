@@ -27,7 +27,7 @@ function calculateTax(price: number | string, tax: number) {
     return parseFloat(price) * tax;
 }
 
-const stuff: (number | string)[] = [1, "2", 3, "4"];
+const stuffArray: (number | string)[] = [1, "2", 3, "4"];
 
 const coords: (Point | Loc)[] = [
     { x: 10, y: 20 },
