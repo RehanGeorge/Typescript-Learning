@@ -8,6 +8,6 @@ function printDouble(msg) {
 printDouble("Hello, world!");
 const btn = document.querySelector("#btn");
 console.log(btn);
-btn === null || btn === void 0 ? void 0 : btn.addEventListener("click", function () {
+btn.addEventListener("click", function () {
     console.log("Button was clicked");
 });

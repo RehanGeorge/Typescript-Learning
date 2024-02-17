@@ -8,9 +8,9 @@ function printDouble(msg: string) {
 
 printDouble("Hello, world!");
 
-const btn = document.querySelector("#btn");
+const btn = document.querySelector("#btn")!;
 console.log(btn);
 
-btn?.addEventListener("click", function() {
+btn.addEventListener("click", function() {
     console.log("Button was clicked");
-})
+});
