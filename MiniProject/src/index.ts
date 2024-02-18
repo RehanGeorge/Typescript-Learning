@@ -14,3 +14,9 @@ console.log(btn);
 btn.addEventListener("click", function() {
     console.log("Button was clicked");
 });
+
+
+//Type Assertion
+let mystery: unknown = "Hello, world!";
+
+const numChars = (mystery as string).length;
