@@ -9,14 +9,22 @@ function printDouble(msg: string) {
 printDouble("Hello, world!");
 
 const btn = document.querySelector("#btn")!;
+const input = document.getElementById("todoinput")! as HTMLInputElement;
+
 console.log(btn);
 
+//Type Assertion
+// const input = document.getElementById("todoinput")!;
+// (<HTMLInputElement>input).value
+
 btn.addEventListener("click", function() {
-    console.log("Button was clicked");
+    alert(input.value);
 });
 
 
+/*
 //Type Assertion
 let mystery: unknown = "Hello, world!";
 
 const numChars = (mystery as string).length;
+*/
