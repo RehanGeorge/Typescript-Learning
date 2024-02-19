@@ -1,3 +1,4 @@
+/*
 console.log("I am hungry");
 console.log("Test");
 
@@ -7,10 +8,27 @@ function printDouble(msg: string) {
 }
 
 printDouble("Hello, world!");
+*/
 
 const btn = document.querySelector("#btn")!;
 const input = document.getElementById("todoinput")! as HTMLInputElement;
+const form = document.querySelector("form")!;
+const list = document.querySelector("#todolist")!;
 
+function handleSubmit(e: SubmitEvent) {
+    e.preventDefault();
+    const newTodo = input.value;
+    const newLI = document.createElement("li");
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    newLI.append(newTodo);
+    newLI.append(checkbox);
+    list.append(newLI);
+}
+
+form.addEventListener("submit", handleSubmit);
+
+/*
 console.log(btn);
 
 //Type Assertion
@@ -20,7 +38,7 @@ console.log(btn);
 btn.addEventListener("click", function() {
     alert(input.value);
 });
-
+*/
 
 /*
 //Type Assertion
