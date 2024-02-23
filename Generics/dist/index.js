@@ -1,2 +1,6 @@
 "use strict";
-console.log("Hello");
+const nums = [];
+const colors = [];
+const inputEl = document.querySelector("#username");
+console.dir(inputEl.value);
+const btn = document.querySelector('.btn');
