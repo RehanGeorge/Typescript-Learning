@@ -33,3 +33,5 @@ function getRandomElement<T>(list: T[]): T {
 
 console.log(getRandomElement<string>(["a", "b", "c"]));
 console.log(getRandomElement<number>([1, 2, 3]));
+
+console.log(getRandomElement([true, false, 3]));

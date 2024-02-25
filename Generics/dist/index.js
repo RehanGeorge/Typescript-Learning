@@ -24,3 +24,4 @@ function getRandomElement(list) {
 }
 console.log(getRandomElement(["a", "b", "c"]));
 console.log(getRandomElement([1, 2, 3]));
+console.log(getRandomElement([true, false, 3]));
