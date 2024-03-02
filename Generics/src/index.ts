@@ -36,7 +36,7 @@ console.log(getRandomElement<number>([1, 2, 3]));
 
 console.log(getRandomElement([true, false, 3]));
 
-function merge<T,U>(object1: T, object2: U) {
+function merge<T extends object, U extends object>(object1: T, object2: U) {
     return {
         ...object1,
         ...object2
@@ -44,3 +44,24 @@ function merge<T,U>(object1: T, object2: U) {
 }
 
 const comboObj = merge({ name: "colt" }, { pets: ["blue", "elton"]});
+
+console.log(merge({ name: "colt" }, { num: 9 }));
+
+interface Lengthy {
+    length: number;
+}
+
+function printDoubleLength<T extends Lengthy>(thing: T) {
+    return thing.length * 2;
+}
+
+printDoubleLength("hello");
+printDoubleLength([1, 2, 3]);
+
+function makeEmptyArray<T = number>(): T[] {
+    return [];
+}
+
+const strings = makeEmptyArray();
+
+const bools = makeEmptyArray<boolean>();
