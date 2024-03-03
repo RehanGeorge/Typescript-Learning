@@ -65,3 +65,37 @@ function printName(entity) {
         console.log(entity.name);
     }
 }
+function isCat(animal) {
+    return animal.numLives !== undefined;
+}
+function makeNoise(animal) {
+    if (isCat(animal)) {
+        return "Meow";
+    }
+    else {
+        return "Woof";
+    }
+}
+function getFarmAnimalSound(animal) {
+    switch (animal.kind) {
+        case "rooster":
+            return "Cockadoodledoo";
+        case "cow":
+            return "Mooo!";
+        case "pig":
+            return "Oink!";
+        case "sheep":
+            return "Baaa!";
+        default:
+            // We should never make it here, but if we do, TypeScript will know that it's a never type
+            const _exhausticeCheck = animal;
+            return _exhausticeCheck;
+    }
+}
+const stevie = {
+    name: "Stevie",
+    weight: 5,
+    age: 2,
+    kind: "rooster"
+};
+console.log(getFarmAnimalSound(stevie));

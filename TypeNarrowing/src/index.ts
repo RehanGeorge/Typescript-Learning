@@ -78,3 +78,83 @@ function printName(entity: User | Company) {
         console.log(entity.name);
     }
 }
+
+// Type Predicates
+interface Cat {
+    name: string;
+    numLives: number;
+}
+
+interface Dog {
+    name: string;
+    breed: string;
+}
+
+function isCat(animal: Cat | Dog): animal is Cat {
+    return (animal as Cat).numLives !== undefined;
+}
+
+function makeNoise(animal: Cat | Dog): string {
+    if (isCat(animal)) {
+        return "Meow";
+    } else {
+        return "Woof";
+    }
+}
+
+// Discriminated Unions
+interface Rooster {
+    name: string;
+    weight: number;
+    age: number;
+    kind: "rooster";
+}
+
+interface Cow {
+    name: string;
+    weight: number;
+    age: number;
+    kind: "cow";
+}
+
+interface Pig {
+    name: string;
+    weight: number;
+    age: number;
+    kind: "pig";
+}
+
+interface Sheep {
+    name: string;
+    weight: number;
+    age: number;
+    kind: "sheep";
+}
+
+type FarmAnimal = Pig | Rooster | Cow | Sheep;
+
+function getFarmAnimalSound(animal: FarmAnimal) {
+    switch (animal.kind) {
+        case "rooster":
+            return "Cockadoodledoo";
+        case "cow":
+            return "Mooo!";
+        case "pig":
+            return "Oink!";
+        case "sheep":
+            return "Baaa!";
+        default:
+            // We should never make it here, but if we do, TypeScript will know that it's a never type
+            const _exhausticeCheck: never = animal;
+            return _exhausticeCheck;
+    }
+}
+
+const stevie: Rooster = {
+    name: "Stevie",
+    weight: 5,
+    age: 2,
+    kind: "rooster"
+};
+
+console.log(getFarmAnimalSound(stevie));
