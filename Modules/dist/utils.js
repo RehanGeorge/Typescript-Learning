@@ -4,4 +4,5 @@ function add(a, b) {
 function sample(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
-export { add, sample };
+const pi = 3.14;
+export { add, sample, pi };
