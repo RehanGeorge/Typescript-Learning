@@ -23,7 +23,7 @@ module.exports = {
     extensions: [".tsx", ".ts", ".js"],
   },
   output: {
-    filename: "[contenthash].bundle.js",
+    filename: "bundle.js",
     path: __dirname + "/dist",
     publicPath: "/dist",
   },
